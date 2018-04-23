@@ -1,0 +1,23 @@
+{
+  "name": "cordova-plugin-bluetoothscanner",
+  "version": "0.1.1",
+  "description": "",
+  "cordova": {
+    "id": "cordova-plugin-bluetoothscanner",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sapydi/cordova-plugin-bluetoothscanner.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "sumit",
+  "license": "ISC"
+}

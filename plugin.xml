@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-bluetoothscanner" version="0.1.1">
+   <name>BluetoothScanner</name>
+   <js-module name="BluetoothScanner" src="www/BluetoothScanner.js">
+      <clobbers target="cordova.plugins.BluetoothScanner" />
+   </js-module>
+   <platform name="android">
+      <config-file parent="/*" target="res/xml/config.xml">
+         <feature name="BluetoothScanner">
+            <param name="android-package" value="cordova.plugin.bluetoothscanner.BluetoothScanner" />
+         </feature>
+      </config-file>
+	    <config-file target="AndroidManifest.xml" parent="/manifest">
+        <uses-permission android:name="android.permission.BLUETOOTH" />
+		<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    </config-file>
+      <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <!--<activity android:name="com.google.zxing.client.android.CaptureActivity" android:clearTaskOnLaunch="true" android:configChanges="orientation|keyboardHidden|screenSize" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden" android:exported="false"/>
+      <activity android:name="com.google.zxing.client.android.encode.EncodeActivity" android:label="Share"/> -->
+    </config-file>
+      <source-file src="src/android/BluetoothScanner.java" target-dir="src/cordova-plugin-bluetoothscanner/BluetoothScanner" />
+	<!--  
+	 <resource-file src="aar/Rfid.AsciiProtocol-1.4.5-release.aar" target="libs/Rfid.AsciiProtocol-1.4.5-release.aar" /> 
+	    
+		 <lib-file src="src/android/barcodescanner-release-2.1.5.aar"/>
+		<lib-file src="src/android/Rfid.AsciiProtocol-1.4.5-release.aar"/> 
+		<framework src="src/android/barcodescanner.gradle" custom="true" type="gradleReference"/>
+		<resource-file src="src/android/barcodescanner-release-2.1.5.aar" target="libs/barcodescanner-release-2.1.5.aar"/>
+		-->
+	<resource-file src="src/android/Rfid.AsciiProtocol-1.4.5-release.aar" target="libs/Rfid.AsciiProtocol-1.4.5-release.aar"/>
+   <framework src="src/android/BluetoothScanner.gradle" custom="true" type="gradleReference" />
+   </platform>
+   <platform name="ios">
+      <config-file parent="/*" target="config.xml">
+         <feature name="BluetoothScanner">
+            <param name="ios-package" value="BluetoothScanner" />
+         </feature>
+      </config-file>
+      <source-file src="src/ios/BluetoothScanner.m" />
+   </platform>
+</plugin>
