@@ -38,7 +38,7 @@
       </config-file>
       <source-file src="src/ios/BluetoothScanner.m" />
 	    <framework src="src/ios/TSLAsciiCommands.framework" custom="true" />
-		<framework src="TSLAsciiCommands.framework\Versions\1.4.1\Headers\TSLAsciiCommand.h" />
+		<framework src="TSLAsciiCommands.framework/Versions/1.4.1/Headers/TSLAsciiCommand.h" />
 		<!--<framework src="ExternalAccessory.framework" custom="true" />-->
 		<framework src="Foundation.framework" weak="true" />
         <framework src="CoreGraphics.framework" weak="true" />
