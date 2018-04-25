@@ -13,6 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import com.uk.tsl.rfid.asciiprotocol.AsciiCommander;
+import com.uk.tsl.rfid.asciiprotocol.BluetoothReaderService;
 /**
  * This class echoes a string called from JavaScript.
  */
