@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.Context;
 import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothDevice; 
+import android.os.Handler;
 
 
 import org.json.JSONArray;
@@ -33,7 +34,7 @@ public class BluetoothScanner extends CordovaPlugin {
 			 AsciiCommander commander = new AsciiCommander(that.cordova.getActivity().getBaseContext());
 			 
 			// Intent intentScan = new Intent(that.cordova.getActivity().getBaseContext(), CaptureActivity.class);
-			callbackContext.success(message + " connnected device name : " + commander.getConnectedDeviceName()+ + "- Device Reader - "+ new BluetoothReaderService(new Handler()));
+			callbackContext.success(message + " connnected device name : " + commander.getConnectedDeviceName()+ "- Device Reader - "+ new BluetoothReaderService(new Handler()));
 			
 			BluetoothManager  bluetoothManagerObj = Context.getSystemService(Context.BLUETOOTH_SERVICE);
                  BluetoothAdapter bluetoothAdapterObj = null;
