@@ -33,8 +33,9 @@ public class BluetoothScanner extends CordovaPlugin {
 
     private void coolMethod(String message, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {
-			 final Context context = that.cordova.getActivity().getBaseContext();
+			 
 			 final CordovaPlugin that = this;
+			 final Context context = that.cordova.getActivity().getBaseContext();
 			 AsciiCommander commander = new AsciiCommander(that.cordova.getActivity().getBaseContext());
 			 
 			// Intent intentScan = new Intent(that.cordova.getActivity().getBaseContext(), CaptureActivity.class);
