@@ -4,6 +4,7 @@ import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 import android.content.Intent;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothDevice; 
 import android.os.Handler;
@@ -32,7 +33,7 @@ public class BluetoothScanner extends CordovaPlugin {
 
     private void coolMethod(String message, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {
-			 final Context context =  new Context();
+			 final Context context = that.cordova.getActivity().getBaseContext();
 			 final CordovaPlugin that = this;
 			 AsciiCommander commander = new AsciiCommander(that.cordova.getActivity().getBaseContext());
 			 
