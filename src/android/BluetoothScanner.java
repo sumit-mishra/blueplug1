@@ -30,26 +30,29 @@ public class BluetoothScanner extends CordovaPlugin {
         return false;
     }
 
-    private static void coolMethod(String message, CallbackContext callbackContext) {
+    private void coolMethod(String message, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {
-			 final CordovaPlugin that = new BluetoothScanner();//this;
+			 final Context context =  new Context();
+			 final CordovaPlugin that = this;
 			 AsciiCommander commander = new AsciiCommander(that.cordova.getActivity().getBaseContext());
 			 
 			// Intent intentScan = new Intent(that.cordova.getActivity().getBaseContext(), CaptureActivity.class);
-			callbackContext.success(message + " connnected device name : " + commander.getConnectedDeviceName()+ "- Device Reader - "+ new BluetoothReaderService(new Handler()));
 			
-			BluetoothManager  bluetoothManagerObj = Context.getSystemService(Context.BLUETOOTH_SERVICE);
+			
+			BluetoothManager  bluetoothManagerObj = context.getSystemService(context.BLUETOOTH_SERVICE);
                  BluetoothAdapter bluetoothAdapterObj = null;
                  
-                 bluetoothAdapterObj = BluetoothAdapter.getDefaultAdapter();
+                 bluetoothAdapterObj = bluetoothManagerObj.getDefaultAdapter();
                  
                  if(bluetoothAdapterObj==null){
-                 BluetoothAdapter bluetoothAdapterObj =  bluetoothManagerObj.getAdapter();
+                    bluetoothAdapterObj =  bluetoothManagerObj.getAdapter();
                  }
                  
                  Boolean status = bluetoothAdapterObj.startDiscovery();
                  
                  Set<BluetoothDevice> listOfBondedDevices = bluetoothAdapterObj.getBondedDevices();
+				 
+				 callbackContext.success(message + " connnected device name : " + commander.getConnectedDeviceName()+ "- Device Reader - "+ new BluetoothReaderService(new Handler()) + " Device list - "+listOfBondedDevices);
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
