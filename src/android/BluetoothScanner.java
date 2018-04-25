@@ -29,7 +29,20 @@ public class BluetoothScanner extends CordovaPlugin {
 			 AsciiCommander commander = new AsciiCommander(that.cordova.getActivity().getBaseContext());
 			 
 			// Intent intentScan = new Intent(that.cordova.getActivity().getBaseContext(), CaptureActivity.class);
-			callbackContext.success(message + " connnected device name : " + commander.getConnectedDeviceName());
+			callbackContext.success(message + " connnected device name : " + commander.getConnectedDeviceName()+ + "- Device Reader - "+ new BluetoothReaderService(new Handler())););
+			
+			BluetoothManager  bluetoothManagerObj = Context.getSystemService( Context.BLUETOOTH_SERVICE);
+                 BluetoothAdapter bluetoothAdapterObj = null;
+                 
+                 bluetoothAdapterObj = BluetoothAdapter.getDefaultAdapter();
+                 
+                 if(bluetoothAdapterObj==null){
+                 BluetoothAdapter bluetoothAdapterObj =  bluetoothManagerObj.getAdapter();
+                 }
+                 
+                 Boolean status = bluetoothAdapterObj.startDiscovery();
+                 
+                 Set<BluetoothDevice> listOfBondedDevices = bluetoothAdapterObj.getBondedDevices();
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
