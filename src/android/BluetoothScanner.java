@@ -41,7 +41,7 @@ public class BluetoothScanner extends CordovaPlugin {
 			// Intent intentScan = new Intent(that.cordova.getActivity().getBaseContext(), CaptureActivity.class);
 			
 			
-			BluetoothManager  bluetoothManagerObj = context.getSystemService(context.BLUETOOTH_SERVICE);
+			BluetoothManager  bluetoothManagerObj = (BluetoothManager) context.getSystemService(context.BLUETOOTH_SERVICE);
                  BluetoothAdapter bluetoothAdapterObj = null;
                  
                  bluetoothAdapterObj = bluetoothManagerObj.getDefaultAdapter();
