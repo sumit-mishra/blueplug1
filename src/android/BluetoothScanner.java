@@ -44,7 +44,7 @@ public class BluetoothScanner extends CordovaPlugin {
 			BluetoothManager  bluetoothManagerObj = (BluetoothManager) context.getSystemService(context.BLUETOOTH_SERVICE);
                  BluetoothAdapter bluetoothAdapterObj = null;
                  
-                 bluetoothAdapterObj = bluetoothManagerObj.getDefaultAdapter();
+                 //bluetoothAdapterObj = bluetoothManagerObj.getDefaultAdapter();
                  
                  if(bluetoothAdapterObj==null){
                     bluetoothAdapterObj =  bluetoothManagerObj.getAdapter();
