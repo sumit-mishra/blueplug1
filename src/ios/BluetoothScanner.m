@@ -1,7 +1,7 @@
 /********* BluetoothScanner.m Cordova Plugin Implementation *******/
 
 #import <Cordova/CDV.h>
-#import <TSLAsciiCommander.h>
+#import <TSLAsciiCommands/TSLAsciiCommander.h>
 @interface BluetoothScanner : CDVPlugin {
   // Member variables go here.
 }
