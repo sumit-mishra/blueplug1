@@ -42,7 +42,7 @@ public class BluetoothScanner extends CordovaPlugin {
 			// Intent intentScan = new Intent(that.cordova.getActivity().getBaseContext(), CaptureActivity.class);
 			
 			BatteryStatusCommand batteryStatusCommand = new BatteryStatusCommand();
-			
+			commander.executeCommand(batteryStatusCommand);
 			
 			BluetoothManager  bluetoothManagerObj = (BluetoothManager) context.getSystemService(context.BLUETOOTH_SERVICE);
                  BluetoothAdapter bluetoothAdapterObj = null;
