@@ -66,12 +66,16 @@ public class BluetoothScanner extends CordovaPlugin {
 					 int state = bluetoothDeviceObj.getBondState();
 					 String name = bluetoothDeviceObj.getName();
 					 int type = bluetoothDeviceObj.getType();
+					 
 					 deviceDetails = deviceDetails+" - Address - " + address + " - State - " + state + " - name - " + name + " - type - " + type;
 				 }
 				 BluetoothReaderService buletoothReader = new BluetoothReaderService(new Handler());
 				 boolean con = buletoothReader.connect(dev, true);
 				 //commander.executeCommand(batteryStatusCommand);
-				 callbackContext.success(message + " connnected device name : " + commander.getConnectedDeviceName()+ "- Device Reader - "+ new BluetoothReaderService(new Handler()) + " Device  - "+ deviceDetails + " device connection - " + con + " - Battery Level - "+batteryStatusCommand.getBatteryLevel()+ " - Battery Charging state - "+batteryStatusCommand.getChargeStatus() );
+				 
+				 callbackContext.success("Connection Success - " +commander.hasConnectedSuccessfully() + " - Connected - " +commander.isConnected() + "- Device Responsive - "+	commander.isResponsive() + " Device - "+commander.getConnectedDeviceName() );
+				 
+				 /*callbackContext.success(message + " connnected device name : " + commander.getConnectedDeviceName()+ "- Device Reader - "+ new BluetoothReaderService(new Handler()) + " Device  - "+ deviceDetails + " device connection - " + con + " - Battery Level - "+batteryStatusCommand.getBatteryLevel()+ " - Battery Charging state - "+batteryStatusCommand.getChargeStatus() );*/
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
