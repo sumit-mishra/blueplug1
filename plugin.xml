@@ -36,6 +36,7 @@
             <param name="ios-package" value="BluetoothScanner" />
          </feature>
       </config-file>
+	  <header-file src="src/ios/TSLAsciiCommand.h"/>
       <source-file src="src/ios/BluetoothScanner.m" />
 	    <framework src="src/ios/TSLAsciiCommands.framework" custom="true" embed="true" />
 		<!--<framework src="ExternalAccessory.framework" custom="true" />-->

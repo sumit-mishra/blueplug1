@@ -16,6 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import com.uk.tsl.rfid.asciiprotocol.AsciiCommander;
 import com.uk.tsl.rfid.asciiprotocol.BluetoothReaderService;
+import com.uk.tsl.rfid.asciiprotocol.commands.BatteryStatusCommand
 /**
  * This class echoes a string called from JavaScript.
  */
@@ -39,6 +40,8 @@ public class BluetoothScanner extends CordovaPlugin {
 			 AsciiCommander commander = new AsciiCommander(that.cordova.getActivity().getBaseContext());
 			 
 			// Intent intentScan = new Intent(that.cordova.getActivity().getBaseContext(), CaptureActivity.class);
+			
+			BatteryStatusCommand batteryStatusCommand = new BatteryStatusCommand();
 			
 			
 			BluetoothManager  bluetoothManagerObj = (BluetoothManager) context.getSystemService(context.BLUETOOTH_SERVICE);
@@ -68,7 +71,7 @@ public class BluetoothScanner extends CordovaPlugin {
 				 BluetoothReaderService buletoothReader = new BluetoothReaderService(new Handler());
 				 boolean con = buletoothReader.connect(dev, true);
 				 
-				 callbackContext.success(message + " connnected device name : " + commander.getConnectedDeviceName()+ "- Device Reader - "+ new BluetoothReaderService(new Handler()) + " Device  - "+ deviceDetails + " device connection - " + con);
+				 callbackContext.success(message + " connnected device name : " + commander.getConnectedDeviceName()+ "- Device Reader - "+ new BluetoothReaderService(new Handler()) + " Device  - "+ deviceDetails + " device connection - " + con + " - Battery Level - "+batteryStatusCommand.getBatteryLevel());
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
