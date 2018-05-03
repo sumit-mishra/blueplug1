@@ -70,7 +70,7 @@ public class BluetoothScanner extends CordovaPlugin {
 				 }
 				 BluetoothReaderService buletoothReader = new BluetoothReaderService(new Handler());
 				 boolean con = buletoothReader.connect(dev, true);
-				 commander.executeCommand(batteryStatusCommand);
+				 //commander.executeCommand(batteryStatusCommand);
 				 callbackContext.success(message + " connnected device name : " + commander.getConnectedDeviceName()+ "- Device Reader - "+ new BluetoothReaderService(new Handler()) + " Device  - "+ deviceDetails + " device connection - " + con + " - Battery Level - "+batteryStatusCommand.getBatteryLevel()+ " - Battery Charging state - "+batteryStatusCommand.getChargeStatus() );
         } else {
             callbackContext.error("Expected one non-empty string argument.");
