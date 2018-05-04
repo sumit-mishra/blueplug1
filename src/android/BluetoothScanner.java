@@ -33,7 +33,7 @@ public class BluetoothScanner extends CordovaPlugin {
         return false;
     }
 
-    private void coolMethod(String message, CallbackContext callbackContext) {
+    private void coolMethod(final String message, final CallbackContext callbackContext) {
     	final CordovaPlugin that = this;
 		final Context context = that.cordova.getActivity().getBaseContext();
 
