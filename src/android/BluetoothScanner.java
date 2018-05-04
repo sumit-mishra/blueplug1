@@ -91,7 +91,7 @@ public class BluetoothScanner extends CordovaPlugin {
 						callbackContext.error("Expected one non-empty string argument.");
 					}
 				}
-			}
+			});
         
     }
 }
