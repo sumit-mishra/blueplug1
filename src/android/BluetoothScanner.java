@@ -17,6 +17,7 @@ import org.json.JSONObject;
 import com.uk.tsl.rfid.asciiprotocol.AsciiCommander;
 import com.uk.tsl.rfid.asciiprotocol.BluetoothReaderService;
 import com.uk.tsl.rfid.asciiprotocol.commands.BatteryStatusCommand;
+import com.uk.tsl.rfid.samples.inventory.InventoryActivity;
 /**
  * This class echoes a string called from JavaScript.
  */
@@ -35,7 +36,7 @@ public class BluetoothScanner extends CordovaPlugin {
     private void coolMethod(String message, CallbackContext callbackContext) {
 		try{
 			if (message != null && message.length() > 0) {
-			 
+			 InventoryActivity ia = new InventoryActivity();
 			 final CordovaPlugin that = this;
 			 final Context context = that.cordova.getActivity().getBaseContext();
 			 AsciiCommander commander = new AsciiCommander(that.cordova.getActivity().getBaseContext());
