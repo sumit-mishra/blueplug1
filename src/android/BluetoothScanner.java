@@ -33,7 +33,8 @@ public class BluetoothScanner extends CordovaPlugin {
     }
 
     private void coolMethod(String message, CallbackContext callbackContext) {
-        if (message != null && message.length() > 0) {
+		try{
+			if (message != null && message.length() > 0) {
 			 
 			 final CordovaPlugin that = this;
 			 final Context context = that.cordova.getActivity().getBaseContext();
@@ -80,5 +81,10 @@ public class BluetoothScanner extends CordovaPlugin {
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
+		
+		}catch(Exception e){
+			callbackContext.error(e.getMessage());
+		}
+        
     }
 }
