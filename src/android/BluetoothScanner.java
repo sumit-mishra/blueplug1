@@ -37,6 +37,8 @@ public class BluetoothScanner extends CordovaPlugin {
     	final CordovaPlugin that = this;
 		final Context context = that.cordova.getActivity().getBaseContext();
 
+		cordova.getThreadPool().execute(new Runnable() {
+            public void run() {
 					if (message != null && message.length() > 0) {
 										 
 					 
@@ -88,5 +90,7 @@ public class BluetoothScanner extends CordovaPlugin {
 					} else {
 						callbackContext.error("Expected one non-empty string argument.");
 					}
-				 }
+				}
+			  });
+			}
 }
