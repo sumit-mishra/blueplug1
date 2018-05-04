@@ -69,8 +69,9 @@ public class BluetoothScanner extends CordovaPlugin {
 					 
 					 deviceDetails = deviceDetails+" - Address - " + address + " - State - " + state + " - name - " + name + " - type - " + type;
 				 }
-				 BluetoothReaderService buletoothReader = new BluetoothReaderService(new Handler());
-				 boolean con = buletoothReader.connect(dev, true);
+				 commander.connect(dev);
+				 //BluetoothReaderService buletoothReader = new BluetoothReaderService(new Handler());
+				 //boolean con = buletoothReader.connect(dev, true);
 				 //commander.executeCommand(batteryStatusCommand);
 				 
 				 callbackContext.success("Connection Success - " +commander.hasConnectedSuccessfully() + " - Connected - " +commander.isConnected() + "- Device Responsive - "+	commander.isResponsive() + " Device - "+commander.getConnectedDeviceName() );
