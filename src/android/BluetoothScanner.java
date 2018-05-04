@@ -34,14 +34,14 @@ public class BluetoothScanner extends CordovaPlugin {
     }
 
     private void coolMethod(String message, CallbackContext callbackContext) {
+    	final CordovaPlugin that = this;
+		final Context context = that.cordova.getActivity().getBaseContext();
+
 		cordova.getThreadPool().execute(new Runnable() {
             public void run() {
 
 					if (message != null && message.length() > 0) {
-						
-					 
-					 final CordovaPlugin that = this;
-					 final Context context = that.cordova.getActivity().getBaseContext();
+										 
 					 
 					 AsciiCommander commander = new AsciiCommander(that.cordova.getActivity().getBaseContext());
 					 
