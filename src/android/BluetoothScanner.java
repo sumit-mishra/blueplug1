@@ -40,6 +40,7 @@ public class BluetoothScanner extends CordovaPlugin {
 					if (message != null && message.length() > 0) {
 										 
 					 
+
 					 AsciiCommander commander = new AsciiCommander(that.cordova.getActivity().getBaseContext());
 					 
 					// Intent intentScan = new Intent(that.cordova.getActivity().getBaseContext(), CaptureActivity.class);
@@ -87,5 +88,5 @@ public class BluetoothScanner extends CordovaPlugin {
 					} else {
 						callbackContext.error("Expected one non-empty string argument.");
 					}
-    }
+				 }
 }

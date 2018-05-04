@@ -14,11 +14,8 @@
         <uses-permission android:name="android.permission.BLUETOOTH" />
 		<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     </config-file>
-      <config-file target="AndroidManifest.xml" parent="/manifest/application">
-      <activity android:name="com.uk.tsl.rfid.samples.inventory.InventoryActivity" android:clearTaskOnLaunch="true" android:configChanges="orientation|keyboardHidden|screenSize" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden" android:exported="false"/>
-      <activity android:name="com.uk.tsl.rfid.TSLBluetoothDeviceActivity" android:label="Share"/> -->
-    </config-file>
-      <source-file src="src/android/BluetoothScanner.java" target-dir="src/cordova-plugin-bluetoothscanner/BluetoothScanner" />
+    
+    <source-file src="src/android/BluetoothScanner.java" target-dir="src/cordova-plugin-bluetoothscanner/BluetoothScanner" />
 	<!--  
 	 <resource-file src="aar/Rfid.AsciiProtocol-1.4.5-release.aar" target="libs/Rfid.AsciiProtocol-1.4.5-release.aar" /> 
 	    
